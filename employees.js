@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import 
+
+import
 {
-  FlatList, Text
+	FlatList, Text
 } from 'react-native';
 
 import SuggestionListLayout from './layour_list.js';
@@ -9,7 +10,7 @@ import Empty from './empty.js';
 import VerticalSeparator from './vertical-separator.js';
 import Suggestion from './suggestion.js';
 
-class SuggestionList extends Component 
+class CategoryList extends Component
 {
   	keyExtractor = ({item}) => item.id.toString()
   	renderEmtpy = () => <Empty text="No hay sugerencias :(" />
@@ -20,7 +21,8 @@ class SuggestionList extends Component
       		<Suggestion {...item}/>
     	)
   	}
-  	render() {
+  	render() 
+  	{
 	  
     	/*const list = [
       	{
@@ -42,7 +44,7 @@ class SuggestionList extends Component
         		/>
       		</SuggestionListLayout>
     	)
-  	}	
+  	}		
 }
 
-export default SuggestionList;
+export default CategoryList;

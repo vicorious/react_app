@@ -1,19 +1,18 @@
 import React from 'react';
 
-import {
+import 
+{
 	View, Text, StyleSheet
 } from 'react-native';
 
 
 function SuggestionListLayout(props)
 {
-	return (
-	
+	return (	
 		<View>		
 			<Text>{props.title}</Text>
 			{props.children}		
-		</View>
-	
+		</View>	
 	)
 }
 

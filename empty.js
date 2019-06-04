@@ -1,19 +1,21 @@
 import React from 'react';
 
-import {
+import 
+{
 	View, Text, StyleSheet
 } from 'react-native';
 
 function Empty(props)
 {
 	return (
-		<View style={styles.container}> 
+		<View style={styles.container}> 			
 			<Text style={styles.text}>{props.text}</Text>
 		</View>
-		)
+	)
 }
 
-const styles  = StyleSheet.create({
+const styles  = StyleSheet.create
+({
 	container:
 	{
 		padding: 10,
