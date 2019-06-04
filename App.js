@@ -42,7 +42,7 @@ export default class App extends Component
 				list={this.state.suggestionList}
 			/>						
 			<CategoryList
-				list={this.state.suggestionList}
+				list={this.state.suggestionList2}
 			/>			
       		</View>
     		);
