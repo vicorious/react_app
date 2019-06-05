@@ -2,30 +2,29 @@ import React from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet, ImageBackground
 } from 'react-native';
 
-function SuggestionListLayout(props) {
+function EmployeesLayout(props) {
   return (
-    <View style={styles.container}>
+    <ImageBackground source={require('./background.png')} style={styles.container}>
       <Text style={styles.title}>{props.title}</Text>
       {props.children}
-    </View>
+    </ImageBackground>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 10,
-    flex: 1,
+    paddingVertical: 30,
+    paddingHorizontal: 10,
   },
   title: {
     color: '#4c4c4c',
     fontSize: 20,
     marginBottom: 10,
-    fontWeight: 'bold',
-    marginLeft: 8,
+    fontWeight: 'bold',    
   }
 })
 
-export default SuggestionListLayout
+export default EmployeesLayout

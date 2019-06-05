@@ -27,9 +27,9 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   container: {
-	marginTop: 90,
     paddingVertical: 10,
     paddingHorizontal: 10,
+    flexDirection: 'row'
   },
   right: {
     flex: 1,

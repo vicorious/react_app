@@ -1,50 +1,39 @@
 import React, { Component } from 'react';
-
-import
-{
-	FlatList, Text
+import {
+  View,
+  FlatList
 } from 'react-native';
+import Empty from './empty';
+import Separator from './horizontal_separator.js';
+import Employee from './suggestion';
+import EmployeesLayout from './employees-layout';
 
-import SuggestionListLayout from './layour_list.js';
-import Empty from './empty.js';
-import VerticalSeparator from './vertical-separator.js';
-import Suggestion from './suggestion.js';
-
-class CategoryList extends Component
+class EmployeeList extends Component 
 {
-  	keyExtractor = ({item}) => item.id.toString()
-  	renderEmtpy = () => <Empty text="No hay sugerencias :(" />
-  	itemSeparator = () => <VerticalSeparator />
-  	renderItem = ({item}) => 
-	{
-    	return (
-      		<Suggestion {...item}/>
-    	)
-  	}
-  	render() 
-  	{
-	  
-    	/*const list = [
-      	{
-        	title: 'Avengers',
-        	key: '1',
-      	},
-      	{
-	        title: 'Pokemon',
-	        key: '2'
-      	}]*/
-    	return (
-      		<SuggestionListLayout title="Recomendado para ti">
-        		<FlatList
-					KeyExtractor={this.keyExtractor}
-          			data={this.props.list}
-          			ListEmptyComponent={this.renderEmtpy}
-          			ItemSeparatorComponent={this.itemSeparator}
-          			renderItem={this.renderItem}
-        		/>
-      		</SuggestionListLayout>
-    	)
-  	}		
+  keyExtractor = item => item.id.toString()
+  renderEmtpy = () => <Empty text="No hay sugerencias :(" />
+  itemSeparator = () => <Separator />
+  renderItem = ({item}) => 
+  {
+    return (
+      <Employee {...item}/>
+    )
+  }
+  render() 
+  {
+    return (
+		<EmployeesLayout title = "Empleados 2">
+      <FlatList
+        horizontal={true}
+        keyExtractor={this.keyExtractor}
+        data={this.props.list}
+        ListEmptyComponent={this.renderEmtpy}
+        ItemSeparatorComponent={this.itemSeparator}
+        renderItem={this.renderItem}
+      />
+	  </EmployeesLayout>
+    )
+  }
 }
 
-export default CategoryList;
+export default EmployeeList;
