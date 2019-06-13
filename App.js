@@ -7,12 +7,13 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
 import Header from './header.js';
 import SuggestionList from './list.js';
 import EmployeeList from './employees.js';
 import API from './Api.js';
 import Home from  './home.js';
+import {Provider} from 'react-redux';
+import store from './store';
 
 
 export default class App extends Component 
@@ -36,15 +37,22 @@ export default class App extends Component
   	render() {
 	  
     	return (
-      		<Home>
-				<Header/> 
-				<EmployeeList
-					list={this.state.suggestionList}
-				/>	
-				<SuggestionList
-					list={this.state.suggestionList}
-				/>								
-      		</Home>
+
+			<Provider
+			   store={store}>
+
+			   <Home>
+			   <Header/> 
+			   <EmployeeList
+				   list={this.state.suggestionList}
+			   />	
+			   <SuggestionList
+				   list={this.state.suggestionList}
+			   />								
+			 </Home>
+			</Provider>
+
+      		
     		);
   	}
 }

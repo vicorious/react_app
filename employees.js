@@ -5,8 +5,15 @@ import {
 } from 'react-native';
 import Empty from './empty';
 import Separator from './horizontal_separator.js';
-import Employee from './suggestion';
+import Employee from './employee.js';
 import EmployeesLayout from './employees-layout';
+import {connect} from 'react-reduce'; 
+
+
+function mapSateToProps(_state)
+{
+  debugger.
+}
 
 class EmployeeList extends Component 
 {
@@ -36,4 +43,4 @@ class EmployeeList extends Component
   }
 }
 
-export default EmployeeList;
+export default connect(mapSateToProps)EmployeeList;
